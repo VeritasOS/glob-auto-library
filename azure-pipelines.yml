@@ -26,5 +26,9 @@ steps:
 
 - script: |
     npm pack
-    npm publish
-  displayName: 'npm pack and publish'
+  displayName: 'npm pack'
+
+- task: Npm@1
+  inputs:
+    command: publish
+    publishEndpoint: 'npmjs'
