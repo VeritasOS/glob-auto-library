@@ -1,0 +1,11 @@
+*.js.map
+/screenshots
+/node_modules
+/coverage
+/built
+/builtspecs
+/lib
+test*.bat
+glob-auto-lib*.tgz
+.DS_Store
+.nyc_output

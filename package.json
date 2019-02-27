@@ -1,0 +1,55 @@
+{
+	"name": "glob-auto-library",
+	"version": "1.1.10",
+	"description": "Globalization Automation Library",
+	"license": "MIT",
+	"main": "lib/lib.js",
+	"module": "lib/lib.js",
+	"scripts": {
+		"protractor": "protractor protractor.config.js",
+		"all.ci": "npm run build && npm pack",
+		"build": "tsc && webpack",
+		"webdriver-manager": "node ./node_modules/protractor/bin/webdriver-manager --ignore_ssl=true",
+		"webdriver:start": "node ./node_modules/protractor/bin/webdriver-manager start --ignore_ssl=true",
+		"webdriver:update": "node ./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true",
+		"test": "jasmine-ts --config=jasmine.json",
+		"testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" jasmine-ts --config=jasmine.json && nyc report"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VeritasOS/glob-auto-library.git"
+	},
+	"keywords": [
+		"g11n",
+		"automation"
+	],
+	"contributors": [
+		"Adrian O'Sullivan <adrian.osullivan@veritas.com>",
+		"Andrzej Poblocki <andrzej.poblocki@veritas.com>"
+	],
+	"dependencies": {
+		"moment": "^2.24.0",
+		"protractor": "^5.4.2"
+	},
+	"devDependencies": {
+		"@types/jasmine": "^3.3.9",
+		"@types/jasminewd2": "^2.0.6",
+		"@types/node": "^11.9.3",
+		"dts-bundle-webpack": "^1.0.2",
+		"jasmine": "^3.3.1",
+		"jasmine-ts": "^0.3.0",
+		"nyc": "^13.2.0",
+		"ts-loader": "^5.3.3",
+		"ts-node": "^8.0.2",
+		"typescript": "^3.3.3",
+		"webpack": "^4.29.5",
+		"webpack-cli": "^3.2.3",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"engines": {
+		"node": ">=6.9.x"
+	},
+	"typescript": {
+		"definition": "lib/lib.d.ts"
+	}
+}
