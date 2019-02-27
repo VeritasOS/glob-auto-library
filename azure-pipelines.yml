@@ -19,6 +19,15 @@ steps:
     npm install
     npm run build
     npm run testWithCoverage
-    npm run pack
-    npm run publish
+    npm pack
+    npm publish
   displayName: 'npm install and build'
+
+- script: |
+    npm run testWithCoverage
+  displayName: 'npm test'
+
+- script: |
+    npm pack
+    npm publish
+  displayName: 'npm pack and publish'
