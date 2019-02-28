@@ -13,7 +13,7 @@
 		"webdriver:start": "node ./node_modules/protractor/bin/webdriver-manager start --ignore_ssl=true",
 		"webdriver:update": "node ./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true",
 		"test": "jasmine-ts --config=jasmine.json",
-		"testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" jasmine-ts --config=jasmine.json && nyc report -r cobertura"
+		"testWithCoverage": "nyc -r cobertura -e .ts -x \"*.test.ts\" jasmine-ts --config=jasmine.json && nyc report -r cobertura"
 	},
 	"repository": {
 		"type": "git",
