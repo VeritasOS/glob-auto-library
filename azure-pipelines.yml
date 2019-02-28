@@ -21,12 +21,24 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    npm run test
-  displayName: 'npm test'
+    npm run testWithCoverage
+  displayName: 'npm testWithCoverage'
 
 - script: |
     npm publish --dry-run
   displayName: 'npm publish --dry-run'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: 'junitresults.xml'
+
+- task: PublishCodeCoverageResults@1
+  inputs: 
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
 
 - task: Npm@1
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
