@@ -29,6 +29,7 @@ steps:
   displayName: 'npm pack'
 
 - task: Npm@1
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     command: publish
     publishEndpoint: 'npmjs'
