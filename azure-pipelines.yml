@@ -21,7 +21,7 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    npm run test
+    npm run testWithCoverage
   displayName: 'npm testWithCoverage'
 
 - script: |
