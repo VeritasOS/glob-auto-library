@@ -22,7 +22,7 @@ npm i glob-auto-library -D
 ### Import GAL in your spec file
 
 ```bash
-var gal = require('glob-auto-libraries');
+var gal = require('glob-auto-library');
 ```
 
 ### Configure parameters related to the page you're testing
