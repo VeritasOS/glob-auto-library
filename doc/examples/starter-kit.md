@@ -18,7 +18,7 @@ Any other dependencies to run Protractor (e.g. Node.js, Java, etc.), or any IDE'
 npm i glob-auto-library -D
 ```
 
-By default, the starter kit uses the Google Chrome browser. If Chrome is not already installed on your computer, please donwload and install it from:
+By default, the starter kit uses the Google Chrome browser. If Chrome is not already installed on your computer, please download and install it from:
 https://www.google.com/chrome/
 
 
