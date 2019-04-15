@@ -29,12 +29,15 @@ describe("date detector", () => {
   });
 
   it("is long US date", () => {
+    Detector.DateFormat = [];
     Detector.DateFormat.push("D MMMM, YYYY");
     let result: boolean = Detector.IsUsDate("15 February, 2019");
     expect(result).toBe(true);
   });
 
   it("is not US date", () => {
+    Detector.DateFormat = [];
+    Detector.DateFormat.push("M/D/YYYY");
     let result: boolean = Detector.IsUsDate("2019/10/15");
     expect(result).toBe(false);
   });

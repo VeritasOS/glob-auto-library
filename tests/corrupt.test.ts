@@ -29,7 +29,7 @@ describe("hardcode detector", () => {
   });
 
   it("corrupted 2", () => {
-    let result: boolean = Detector.IsCorrupt("freeä½ å¯ä»¥å¾ˆå®¹æ˜“");
+    let result: boolean = Detector.IsCorrupt("freeä½å¯ä»¥å¾ˆå®¹æ˜“");
     expect(result).toBe(true);
   });
 
