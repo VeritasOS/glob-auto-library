@@ -96,6 +96,6 @@ export interface ICreateIssue {
 }
 
 
-export enum IssueType { Linguistic = 0, Hardcode = 1, DateTime = 2, Overlap = 3, Corruption = 4, Clipped = 5 }
+export enum IssueType { Linguistic = 0, Hardcode = 1, Overlapping = 2, CharacterCorruption = 3 }
 export enum IssueStatus { Active = 0, Resolved = 1, FalsePositive = 2 }
 export enum IssueSeverity { Info = 0, Warning = 1, Error = 2 }

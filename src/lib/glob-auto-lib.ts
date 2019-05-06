@@ -55,7 +55,7 @@ export async function checkerRun(selector: string, lang: string, checks: GalChec
           switch (check) {
             case GalCheck.Corruption:
               result = await checkCorruption(elem);
-              type = IssueType.Corruption;
+              type = IssueType.CharacterCorruption;
               break;
             case GalCheck.Hardcode:
               result = await checkHardcode(elem);
@@ -63,15 +63,15 @@ export async function checkerRun(selector: string, lang: string, checks: GalChec
               break;
             case GalCheck.DateTime:
               result = await checkUsDate(elem);
-              type = IssueType.DateTime;
+              type = IssueType.Linguistic;
               break;
             case GalCheck.Clipped:
               result = await checkClippedText(elem);
-              type = IssueType.Clipped;
+              type = IssueType.Overlapping;
               break;
             case GalCheck.Overlap:
               result = await checkOverlap(elem);
-              type = IssueType.Overlap;
+              type = IssueType.Overlapping;
               break;
           }
 
