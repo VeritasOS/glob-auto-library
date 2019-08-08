@@ -24,6 +24,7 @@ import { ICreateIssue } from "../arp/utils/garb-interface";
 import { checkerRun, GalCheck } from "./glob-auto-lib";
 import { saveIssues } from "./issueHelper";
 import { saveScreen } from "./screenshotHelper";
+import { saveScreenSource } from "./screensourceHelper";
 import { Detector } from "./detector";
 
 export class GalFunctions {
@@ -57,6 +58,11 @@ export class GalFunctions {
 
   public static async saveScreen(path: string, screenName: string, lang: string): Promise<boolean> {
     saveScreen(path, screenName, lang);
+    return true;
+  }
+
+  public static async saveScreenSource(path: string, screenName: string, lang: string): Promise<boolean> {
+    saveScreenSource(path, screenName, lang);
     return true;
   }
 
