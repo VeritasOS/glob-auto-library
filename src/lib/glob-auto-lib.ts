@@ -46,7 +46,7 @@ export async function checkerRun(selector: string, lang: string, checks: GalChec
   try {
     let issues: ICreateIssue[] = [];
 
-    await element.all(by.xpath(selector + "//*[not(descendant::div)]")).each(async elem => {
+    await element.all(by.xpath(selector + "//*[normalize-space(text())]")).each(async elem => {
       try {
         for (let check of checks) {
           let result: boolean = false;

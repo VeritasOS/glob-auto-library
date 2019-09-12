@@ -88,14 +88,13 @@ export class Detector {
         let detectString: string = processedText;
         let regSpace: RegExp = /\s+/;
         let array: string[] = detectString.trim().split(regSpace);
-        detectString = array.join("");
-        detectString = this.removePunctuationAndDigit(detectString);
+        let words = array.map(str => this.removePunctuationAndDigit(str));
         let regWord: RegExp = /^[a-zA-Z]+$/;
-
-        if (regWord.test(detectString)) {
-          if (processedText !== undefined && processedText !== "") {
-            console.log("Hardcoded string found: " + processedText);
-            isBroken = true;
+        for (let word of words) {
+          if (regWord.test(word) && processedText){
+              console.log("Hardcoded string found: " + processedText);
+              isBroken = true;
+              break;
           }
         }
       }
