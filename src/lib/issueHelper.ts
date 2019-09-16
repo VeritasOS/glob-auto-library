@@ -173,10 +173,10 @@ export function FilterIssues(issues: ICreateIssue[]): ICreateIssue[] {
   }
 
   for (let i: number = 0; i < n; i++) {
-    for (let j: number = 0; j < n; j++) {
+    for (let j: number = i + 1; j < n; j++) {
 
       // is i inside j inside
-      if (i !== j && issues[i].type === issues[j].type) {
+      if ( issues[i].type === issues[j].type) {
         if (!inside[i]) {
           inside[i] = IsInside(issues[i].x,
             issues[i].y,
@@ -201,9 +201,6 @@ export function FilterIssues(issues: ICreateIssue[]): ICreateIssue[] {
             issues[i].width,
             issues[i].height);
 
-          if (inside[j]) {
-            break;
-          }
         }
       }
     }

@@ -1,6 +1,6 @@
 {
 	"name": "glob-auto-library",
-	"version": "1.1.17",
+	"version": "1.1.18",
 	"description": "Globalization Automation Library",
 	"license": "MIT",
 	"main": "lib/lib.js",
@@ -45,7 +45,9 @@
 		"typescript": "^3.3.3",
 		"webpack": "^4.29.5",
 		"webpack-cli": "^3.2.3",
-		"webpack-node-externals": "^1.7.2"
+		"webpack-node-externals": "^1.7.2",
+		"xmldom": "^0.1.27",
+		"xpath": "0.0.27"
 	},
 	"engines": {
 		"node": ">=6.9.x"
